@@ -1,0 +1,3 @@
+setTimeout(function() {
+    //Here goes function that is responsible for hiding growl 
+}, 4000);
