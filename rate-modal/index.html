@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    
 <div class="container">
     <button onclick="toggle()"  id="button" class="btn">popup</button>
 </div>
-
 <div class="popup-container">
-
     <div class="popup">
-
         <h3>how do you like our services</h3>
-
         <input type="radio" name="buttons" id="btn1">
         <input type="radio" name="buttons" id="btn2">
         <input type="radio" name="buttons" id="btn3">
         <input type="radio" name="buttons" id="btn4">
         <input type="radio" name="buttons" id="btn5">
-
         <div class="icons">
             <label for="btn1">🙁</label>
             <label for="btn2">😐</label>
@@ -33,28 +25,41 @@
             <label for="btn4">😀</label>
             <label for="btn5">😍</label>
         </div>
-
         <input onclick="toggle()" type="submit" value="submit" class="btn">
-
         <div onclick="toggle()" id="close">✖</div>
-
     </div>
-
 </div>
-
-
 <script>
-
-
 function toggle(){
- 
  let toggle = document.querySelector('.popup-container')
-
  toggle.classList.toggle('toggle');
+}
+</script>
+<script>
+    function openModalAfterDelay() {
+    var modal = document.getElementById("myModal");
+    var closeBtn = document.getElementsByClassName("close")[0];
 
+    // Show the modal
+    modal.style.display = "block";
+
+    // Close the modal when the close button is clicked
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 }
 
+// Wait for the page to load
+window.onload = function() {
+    setTimeout(openModalAfterDelay, 5000); // 5000 milliseconds = 5 seconds
+};
 </script>
-
 </body>
 </html>
